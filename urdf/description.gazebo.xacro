@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!--
+Software License Agreement (BSD)
+
+\file      description.gazebo.xacro
+\authors   Raffaello Bonghi <bonghi@dis.uniroma1.it
+\copyright Copyright (c) 2015, La Sapienza University of Rome, All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+the following conditions are met:
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the
+   following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+   following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of Clearpath Robotics nor the names of its contributors may be used to endorse or promote
+   products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WAR-
+RANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IN-
+DIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<robot name="arvi_robot_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="simulator_enabled" default="true" />
+  <xacro:arg name="plate_enabled" default="false" />
+  <xacro:arg name="truck_fixed" default="true" />
+
+  <xacro:include filename="$(find ros_arvi_description)/urdf/arvi.urdf.xacro" />
+  <xacro:arvi_robot />
+
+
+  <!-- COLOR PARTS FOR GAZEBO -->
+
+  <!-- base_link -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <!-- body_part_Link -->
+  <gazebo reference="body_part_Link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- electronics_body_Link -->
+  <gazebo reference="electronics_body_Link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- black_body_Link -->
+  <gazebo reference="black_body_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- cover_Link -->
+  <!--<gazebo reference="cover_Link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>-->
+
+  <!-- base_camera_Link -->
+  <gazebo reference="base_camera_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- LEFT TRUCK -->
+  <!-- left_truck_Link -->
+  <gazebo reference="left_truck_Link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <!-- left_active_sprocket_Link -->
+  <gazebo reference="left_active_sprocket_Link">
+    <maxContacts>1</maxContacts>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- left_passive_sprocket_Link -->
+  <gazebo reference="left_passive_sprocket_Link">
+    <maxContacts>1</maxContacts>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- left_struct_truck_Link -->
+  <gazebo reference="left_struct_truck_Link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- left_truck_chain_Link -->
+  <gazebo reference="left_truck_chain_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- RIGHT TRUCK -->
+  <!-- right_truck_Link -->
+  <gazebo reference="right_truck_Link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <!-- right_active_sprocket_Link -->
+  <gazebo reference="right_active_sprocket_Link">
+    <maxContacts>1</maxContacts>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- right_passive_sprocket_Link -->
+  <gazebo reference="right_passive_sprocket_Link">
+    <maxContacts>1</maxContacts>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- right_struct_truck_Link -->
+  <gazebo reference="right_struct_truck_Link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- right_truck_chain_Link -->
+  <gazebo reference="right_truck_chain_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- PLATE -->
+  <!-- plate_Link -->
+  <gazebo reference="plate_Link">
+    <!--<selfCollide>true</selfCollide>-->
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <!-- camera_plate_Link -->
+  <gazebo reference="camera_plate_Link">
+    <!--<selfCollide>true</selfCollide>-->
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- left_blade_Link -->
+  <gazebo reference="left_blade_Link">
+    <!--<selfCollide>true</selfCollide>-->
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- right_blade_Link -->
+  <gazebo reference="right_blade_Link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- TILT -->
+  <!-- tilt_Link -->
+  <gazebo reference="tilt_Link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- tilt_camera_Link -->
+  <gazebo reference="tilt_camera_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>
